@@ -1,0 +1,118 @@
+{% extends "layout.html" %} {% block main %}
+<main
+  class="flex flex-col items-center justify-center min-h-screen gap-8 p-8 md:flex-row bg-gradient-to-br from-gray-100 to-gray-200"
+>
+  <!-- Introduction Section -->
+  <section class="w-full text-center md:text-left md:w-1/2">
+    <h2 class="text-4xl font-bold text-gray-900">
+      A modern & secure way of managing student documents using Ethereum
+      Blockchain ✨
+    </h2>
+    <p class="mt-4 text-lg text-gray-600">
+      Work with an AI writing partner that helps you find the words you need.
+      Save your time and manage documents securely with AuthBlock.
+    </p>
+  </section>
+  <!-- Registration Section -->
+  <section class="flex items-center justify-center w-full md:w-1/2">
+    <div class="flex items-center justify-center w-full">
+      <div class="w-full max-w-md mx-auto">
+        <div
+          class="relative flex flex-col text-gray-700 bg-white shadow-lg rounded-xl"
+        >
+          <div
+            class="relative grid mx-4 mb-6 -mt-6 overflow-hidden text-white shadow-lg h-36 place-items-center rounded-t-xl bg-gradient-to-tr from-gray-900 to-gray-800"
+          >
+            <h3
+              class="block font-sans text-4xl antialiased font-semibold leading-snug tracking-tight text-white"
+            >
+              Register
+            </h3>
+            <p class="mt-2 text-lg text-center text-gray-300">
+              Create your account to get started with AuthBlock
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-4 p-6">
+            <form
+              action="{% url 'email_registration' %}"
+              method="POST"
+              id="registration-form"
+            >
+              {% csrf_token %}
+              <div class="relative w-full h-11">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full h-full px-3 py-3 font-sans text-sm font-normal text-gray-700 transition-all bg-transparent border border-gray-300 rounded-md focus:border-gray-900 focus:ring focus:ring-gray-300 placeholder-shown:border-gray-300"
+                  placeholder=" "
+                  required
+                />
+                <label
+                  class="absolute text-sm text-gray-500 transition-all pointer-events-none left-3 -top-2 peer-placeholder-shown:top-1 peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-gray-700"
+                >
+                  Email
+                </label>
+              </div>
+
+              <!-- User Type Selection with Radio Buttons -->
+              <div class="mt-4">
+                <p class="text-gray-700">Select User Type:</p>
+                <div class="flex gap-4 mt-2">
+                  <label class="flex items-center">
+                    <input
+                      type="radio"
+                      name="user_type"
+                      value="student"
+                      class="mr-2"
+                      required
+                    />
+                    <span class="text-gray-600">Student</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="radio"
+                      name="user_type"
+                      value="issuer"
+                      class="mr-2"
+                      required
+                    />
+                    <span class="text-gray-600">Issuer</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="radio"
+                      name="user_type"
+                      value="verifier"
+                      class="mr-2"
+                      required
+                    />
+                    <span class="text-gray-600">Verifier</span>
+                  </label>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="block w-full px-6 py-3 font-sans text-xs font-bold text-center text-white uppercase align-middle transition-all rounded-lg shadow-md bg-gradient-to-tr from-gray-900 to-gray-800 hover:shadow-lg hover:shadow-gray-900/20"
+              >
+                Register
+              </button>
+              <div class="text-sm font-medium text-gray-500">
+                Already registered?
+                <a
+                  href="{% url 'login' %}"
+                  class="text-blue-700 hover:underline"
+                  >Login here</a
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% endblock %}

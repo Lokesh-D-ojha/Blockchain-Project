@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP Verification</title>
+    {% comment %} {#
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <!-- Add your CSS file here -->
+    #} {% endcomment %}
+  </head>
+  <body>
+    <div class="container">
+      <h2>OTP Verification</h2>
+      <p>Please enter the OTP sent to your email.</p>
+
+      {% if error %}
+      <div class="alert alert-danger">{{ error }}</div>
+      {% endif %}
+
+      <form method="POST" action="{% url 'otp_verification' %}">
+        <!-- Adjusted action URL to your view name -->
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="otp">OTP Code:</label>
+          <input type="text" id="otp" name="otp" required />
+        </div>
+        <button type="submit">Verify OTP</button>
+      </form>
+    </div>
+  </body>
+</html>

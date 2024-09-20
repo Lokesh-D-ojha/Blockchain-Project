@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block header %}
+    <header class="flex items-center justify-between p-4 bg-white shadow">
+      <div class="logo">
+        <a href="{% url 'index' %}" class="text-xl font-bold text-gray-800">
+          AuthBlock 📑
+        </a>
+      </div>
+        <button
+          class="px-4 py-2 text-white rounded bg-emerald-500 hover:bg-emerald-600"
+          onclick="window.location.href='{% url 'index' %}'"
+        >
+          Logout
+        </button>
+      </header>
+     {% endblock %}

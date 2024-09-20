@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block main %}
+<main class="flex flex-col items-center justify-center min-h-screen">
+    <div class="p-6 bg-white rounded-lg shadow-lg">
+      <h1 class="text-3xl font-bold text-gray-800">
+        Registration Successful!
+      </h1>
+      <p class="mt-4 text-lg text-gray-600">
+        Please check your email for further instructions to complete your
+        registration.
+      </p>
+      <div class="mt-6">
+        <a
+          href="{% url 'login' %}"
+          class="px-4 py-2 text-white rounded bg-emerald-500 hover:bg-emerald-600"
+        >
+          Go to Login
+        </a>
+      </div>
+    </div>
+  </main>
+{% endblock %}
