@@ -14,7 +14,7 @@ This project implements a Document Authentication System using Blockchain techno
 ## Installation
 
 **Clone the Repository**:
-   git clone https://https://github.com/Lokesh-D-ojha/Blockchain-Project/.git
+   git clone [https://https://github.com/Lokesh-D-ojha/Blockchain-Project/.git](https://github.com/Lokesh-D-ojha/Blockchain-Project.git)
    
 Steps:
 1. Set Up a Virtual Environment:
